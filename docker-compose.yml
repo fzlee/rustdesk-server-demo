@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  rustdesk-server:
+    image: fzlee/rustdesk-server-demo:latest
+    restart: always
+    ports:
+      - "21115:21115"
+      - "21116:21116"
+      - "21117:21117"
+      - "21118:21118"
+    environment:
+      - IP=192.168.5.105
+    command: sleep 10000
+    volumes:
+      - ./abc:/abc
+
